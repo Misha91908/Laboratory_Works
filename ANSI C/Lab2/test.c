@@ -17,7 +17,7 @@ int main() {
             printf("F = %f\n", F);
             break;
         case 'Y':
-            if ((15*a*a-29*a*x+12*x*x+1)/(1-15*a*a+29*a*x-12*x*x)>0)
+            if ((15*a*a-29*a*x+12*x*x>-1) && (15*a*a-29*a*x+12*x*x)<1)
             {Y =0.5*log((15*a*a-29*a*x+12*x*x+1)/(1-15*a*a+29*a*x-12*x*x));
                     printf("Y = %f\n", Y);}
             else{
