@@ -7,7 +7,7 @@ int main() {
     double G, F, Y;
     scanf("%f %f %c", &a, &x, &name);
     getchar();
-    switch (name) {
+    switch (name) {  /*выбирается функция,считается ее значение по введенным х и а, если это возможно*/  
         case 'G':
             G = (5 * (-2 * a * a + a * x + 3 * x * x)) / (10 * a * a + 11 * a * x + 3 * x * x);
             printf("G = %f\n", G);
@@ -26,6 +26,7 @@ int main() {
             break;
         default:
             printf("ничего не выбрано");
+            break;
     }
     return 0;
 }
