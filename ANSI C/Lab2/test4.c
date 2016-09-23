@@ -3,7 +3,7 @@ int main(void)
 {
     int a;
     scanf("%d", &a);
-    switch (a)
+    switch (a)  /* проверяется,что введено*/
     {
         case 1:
             printf("Vy vveli \"1\"\n");
