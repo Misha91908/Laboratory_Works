@@ -8,7 +8,8 @@ int main() {
     scanf("%f", &x2_value);
     scanf("%f", &a_par);
     scanf("%f", &delta);
-    for (x = x1_value; x <= x2_value; x += delta) {
+    for (x = x1_value; x <= x2_value; x += delta) { /*объявляются 3 цикла, с помощью которых считаются значения функций,
+ * с учетом входа х в область определения там,где это требуется, и выводятся на экран*/
         G_function = (5 * (-2 * a_par * a_par + a_par * x + 3 * x * x)) /
                      (10 * a_par * a_par + 11 * a_par * x + 3 * x * x);
         printf("%f ", G_function);
@@ -20,13 +21,12 @@ int main() {
     }
     printf("\n");
     for (x = x1_value; x <= x2_value; x += delta) {
-        if (((15 * a_par * a_par - 29 * a_par * x + 3 * x * x) < -1) && ((15 * a_par * a_par - 29 * a_par * x + 3 * x * x) > 1))
+        if ((1 + 15 * a_par * a_par - 29 * a_par * x + 12 * x * x) / (1 -15 * a_par * a_par +29 * a_par * x + 12 * x * x)>0)
         {
-            Y_function = 0.5 * log((1 + 15 * a_par * a_par - 29 * a_par * x + 12 * x * x) / (1 -15 * a_par * a_par +29 * a_par * x + 12 * x * x));
+            Y_function = 0.5 * log((1 + 15 * a_par * a_par - 29 * a_par * x + 12 * x * x) /
+                                   (1 - 15 * a_par * a_par + 29 * a_par * x + 12 * x * x));
             printf("%f ", Y_function);
         }
     }
-
     return 0;
-
 }
