@@ -6,7 +6,7 @@ int main()
     char name;
     int change, i = 0;
     float a, x, x2, step, delta;
-    double function, delta_function, max_y,x_max;
+    double function, delta_function, max_y, x_max;
     double data_y[100];
     enter:
     printf("Введите первую границу для рассчета функции: ");
@@ -45,27 +45,42 @@ int main()
                    }
                 }
                 i++;
-                if (i>100)
+                if (i>100) /* проверка на перезаполнение массива*/
                 {
                     printf("Ошибка. Превышено количество итераций,пожалуйста,введите значения заново");
+                    i = 0;
                     goto enter;
                 }
                 delta_function = (5 * (-2 * a * a + a * (x + step) + 3 * (x + step) * (x + step))) /
                                  (10 * a * a + 11 * a * (x + step) + 3 * (x + step) * (x + step));
-                while (fabs(delta_function - function) > delta)
+                if (fabs(delta_function - function) < delta)  /*если функция меняется слишком быстро(или медленно), то меняется шаг*/
                 {
-                    if (fabs(delta_function - function) > delta)  /*если функция меняется слишком быстро(или медленно), то меняется шаг*/
+                    while (fabs(delta_function - function) < delta)
                     {
-                        step /= 2;
+                        step *= 2;
                         delta_function = (5 * (-2 * a * a + a * (x + step) + 3 * (x + step) * (x + step))) /
                                          (10 * a * a + 11 * a * (x + step) + 3 * (x + step) * (x + step));
                     }
                 }
+                x_max = x;
                 x = x + step;
+                if (x>=x2) /*ограничение для адаптивного ввода,чтобы данные не выходили за пределы заданного интервала*/
+                {
+                    break;
+                }
             }
-            printf("G(max) = %f\n",max_y);
-            printf("x(max) =  %f\n",x);
-            i = 0;
+            if (i > 1)/*если итерация была только одна,то выводится переменная function,
+ *в противном случае вывелся бы 0(ошибка)*/
+            {
+                printf("G(max) = %f\n",max_y);
+                i = 0;
+            }
+            else
+            {
+                printf("G(max) = %f\n",function);
+            }
+
+            printf("x(max) =  %f\n",x_max);
             printf("Хотите посчитать другую функцию? Введите 1,если хотите, в противном случае введите любой символ.");
             scanf("%d",&change); /*если пользователь захочет посчитать еще раз,
  * то после выполнения рассчетов ему предлагается ввести контрольное значение для перехода к началу программы*/
@@ -91,14 +106,15 @@ int main()
                 if (i>100)
                 {
                     printf("Ошибка. Превышено количество итераций,пожалуйста,введите значения заново\n");
+                    i = 0;
                     goto enter;
                 }
                 delta_function = pow(2, 10 * a * a - 29 * a * (x + step) + 18 * (x + step) * (x + step));
-                while (delta_function - function < delta)
+                if (delta_function - function > delta)
                 {
-                    if (delta_function - function < delta)
+                    while (delta_function - function > delta)
                     {
-                        step *= 5;
+                        step /= 3;
                         delta_function = pow(2, 10 * a * a - 29 * a * (x + step) + 18 * (x + step) * (x + step));
                     }
                 }
@@ -109,9 +125,16 @@ int main()
                     break;
                 }
             }
-            printf("F(max) = %f\n",max_y);
+            if (i > 1)
+            {
+                printf("F(max) = %f\n",max_y);
+                i = 0;
+            }
+            else
+            {
+                printf("F(max) = %f\n",function);
+            }
             printf("x(max) = %f\n ",x_max);
-            i = 0;
             printf("Хотите посчитать другую функцию? Введите 1,если хотите, в противном случае введите дургой символ.");
             scanf("%d",&change);
             getchar();
@@ -140,13 +163,21 @@ int main()
                 if (i>100)
                 {
                     printf("Ошибка. Превышено количество итераций,пожалуйста,введите значения заново");
+                    i = 0;
                     goto enter;
                 }
                 x = x + step;
             }
-            printf("%f Наибольшее значение функции на заданном отрезке: ",max_y);
-            printf("%f Наибольшее значение аргумента: ",x);
-            i = 0;
+            if (i > 1)
+            {
+                printf("Y(max) = %f\n",max_y);
+                i = 0;
+            }
+            else
+            {
+                printf("Y(max) = %f\n",function);
+            }
+            printf("x(max) = %f\n",x);
             max_y = 0;
             printf("Хотите посчитать другую функцию? Введите 1,если хотите, в противном случае введите любой символ.");
             scanf("%d",&change);
@@ -155,7 +186,7 @@ int main()
                 goto enter;
             break;
         default:
-            printf("ничего не выбрано или некорректно введены данные");
+            printf("Ничего не выбрано или некорректно введены данные.");
             break;
     }
     return 0;

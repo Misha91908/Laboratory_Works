@@ -7,7 +7,7 @@ int main()
     char name;
     int change;
     float a, x, x2, step, delta;
-    double G_function, F_function, Y_function, delta_function;
+    double function, delta_function;
 enter:
     printf("Введите первую границу для рассчета функции: ");
     scanf("%f", &x);
@@ -33,20 +33,24 @@ enter:
         case 'G':
             while (x < x2)
             {
-                G_function = (5 * (-2 * a * a + a * x + 3 * x * x)) / (10 * a * a + 11 * a * x + 3 * x * x);
-                printf("G = %f\n", G_function);
+                function = (5 * (-2 * a * a + a * x + 3 * x * x)) / (10 * a * a + 11 * a * x + 3 * x * x);
+                printf("G = %f\n", function);
                 delta_function = (5 * (-2 * a * a + a * (x + step) + 3 * (x + step) * (x + step))) /
                                  (10 * a * a + 11 * a * (x + step) + 3 * (x + step) * (x + step));
-                while (fabs(delta_function - G_function) > delta)
+                if (fabs(delta_function - function) < delta)  /*если функция меняется слишком быстро(или медленно), то меняется шаг*/
                 {
-                    if (fabs(delta_function - G_function) > delta)  /*если функция меняется слишком быстро(или медленно), то меняется шаг*/
+                    while (fabs(delta_function - function) < delta)
                     {
-                        step /= 2;
-                        delta_function = (5 * (-2 * a * a + a * (x + step) + 3 * (x + step) * (x + step))) /
+                            step *= 2;
+                            delta_function = (5 * (-2 * a * a + a * (x + step) + 3 * (x + step) * (x + step))) /
                                          (10 * a * a + 11 * a * (x + step) + 3 * (x + step) * (x + step));
                     }
                 }
                 x = x + step;
+                if (x >= x2)
+                {
+                    break;
+                }
             }
             printf("Хотите посчитать другую функцию? Введите 1,если хотите, в противном случае введите любой символ.");
             scanf("%d",&change); /*если пользователь захочет посчитать еще раз, 
@@ -58,18 +62,21 @@ enter:
         case 'F':
             while (x < x2)
             {
-                F_function = pow(2, 10 * a * a - 29 * a * x + 18 * x * x);
-                printf("F = %f\n", F_function);
+                function = pow(2, 10 * a * a - 29 * a * x + 18 * x * x);
+                printf("F = %f\n", function);
                 delta_function = pow(2, 10 * a * a - 29 * a * (x + step) + 18 * (x + step) * (x + step));
-                while (delta_function - F_function < delta)
+                if (delta_function - function > delta)
                 {
-                    if (delta_function - F_function < delta)
-                    {
-                        step *= 10;
-                        delta_function = pow(2, 10 * a * a - 29 * a * (x + step) + 18 * (x + step) * (x + step));
+                    while (delta_function - function > delta) {
+                           step /= 2;
+                            delta_function = pow(2, 10 * a * a - 29 * a * (x + step) + 18 * (x + step) * (x + step));
                     }
                 }
                 x = x + step;
+                if (x >= x2)
+                {
+                    break;
+                }
             }
             printf("Хотите посчитать другую функцию? Введите 1,если хотите, в противном случае введите дургой символ.");
             scanf("%d",&change);
@@ -82,11 +89,15 @@ enter:
             {
                 if ((15 * a * a - 29 * a * x + 12 * x * x) > -1 && (15 * a * a - 29 * a * x + 12 * x * x) < 1)
                 {
-                    Y_function = 0.5 * log((15 * a * a - 29 * a * x + 12 * x * x + 1) /
+                    function = 0.5 * log((15 * a * a - 29 * a * x + 12 * x * x + 1) /
                                            (1 - 15 * a * a + 29 * a * x - 12 * x * x));
-                    printf("Y = %f\n", Y_function);
+                    printf("Y = %f\n", function);
                 }
                 x = x + step;
+                if (x >= x2)
+                {
+                    break;
+                }
             }
             printf("Хотите посчитать другую функцию? Введите 1,если хотите, в противном случае введите любой символ.");
             scanf("%d",&change);
