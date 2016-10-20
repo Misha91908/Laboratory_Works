@@ -1,6 +1,0 @@
-for i in range(int(k)-5):
-     for t in range(5):
-          s = xx[i]+xx[i+1]
-          s1 = yy[i]+yy[i+1]
-     ss.append(s/54)
-     ss1.append(s1/54)
