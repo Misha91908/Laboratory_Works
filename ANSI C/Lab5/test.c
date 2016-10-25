@@ -56,7 +56,7 @@ int main()
                 {
                     i++;
                     n = strstr(output, pattern) - output + 1;
-                    while (k != n+1)
+                    while (k != n)
                     {
                         output[k] = ' ';
                         k++;
@@ -103,7 +103,7 @@ int main()
                 {
                     i++;
                     n = strstr(output, pattern) - output + 1;
-                    while (k != n+1)
+                    while (k != n)
                     {
                         output[k] = ' ';
                         k++;
@@ -149,7 +149,7 @@ int main()
                 {
                     i++;
                     n = strstr(output, pattern) - output + 1;
-                    while (k != n+1)
+                    while (k != n)
                     {
                         output[k] = ' ';
                         k++;
