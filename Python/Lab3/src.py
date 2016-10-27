@@ -28,6 +28,7 @@ elif name == 'F':
                 step /= 2
                 delta_function = 2 ** 10 * a * a - 29 * a * (x + step) + 18 * (x + step) * (x + step)
         x += step
+        i += 1
         if x >= x2 or i > 100:
             break
 elif name == 'Y':
@@ -36,6 +37,7 @@ elif name == 'Y':
             function = atanh(15 * a * a - 29 * a * x + 12 * x * x)
             print("Y = ", function)
         x += step
+        i += 1
         if x >= x2 or i > 100:
             break
 else:
