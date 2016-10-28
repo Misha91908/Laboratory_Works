@@ -4,46 +4,54 @@ from math import fabs
 change = 1
 
 while change == 1:
-    x = float(input("Введите первую границу для рассчета функции: "))
-    x2 = float(input("Введите вторую границу для рассчета функции: "))
-    a = float(input("Введите параметр: "))
-    step = float(input("Введите шаг: "))
-    delta = float(input("Введите разницу между значениями функции: "))
-    name = str(input("Выберите функцию: "))
-    y = []
+    enter = input("Введите первую границу для рассчета функции: ")
+    x = float(enter)
+    enter = input("Введите вторую границу для рассчета функции: ")
+    x2 = float(enter)
+    enter = input("Введите параметр: ")
+    a = float(enter)
+    enter = input("Введите шаг: ")
+    step = float(enter)
+    enter = input("Введите разницу между значениями функции: ")
+    delta = float(enter)
+    enter = input("Введите шаблон: ")
+    name = input("Выберите функцию: ")
     i = 0
+    test = 0
+    k = 0
+    output = str()
+    counter = 0
 
     if name == 'G':
         while x < x2:
             if (10 * a * a + 11 * a * x + 3 * x * x) != 0:
                 function = 5 * (-2 * a * a + a * x + 3 * x * x) / (10 * a * a + 11 * a * x + 3 * x * x)
                 print("G = ", function)
-                y.append(function)
-            if i > 0:
-                if y[i] > y[i - 1]:
-                    y_max = y[i]
-                else:
-                    y_max = y[i - 1]
+                output = output + str(function)
             x += step
             i += 1
             if x >= x2 or i > 100:
                 break
-        print(y)
-        if i == 1:
-            print("У(max) = ", y[0])
-        else:
-            print("У(max) = ", y_max)
-        print("X(max) = ", x)
+        print(output)
+        while output.find(enter) != -1:
+            test += 1
+            if output.find(enter) != -1:
+                counter += 1
+                print("counter =",counter)
+                while k <= output.find(enter)+len(enter):
+                    output.replace(output[k], ' ')
+                    k += 1
+                    print("k =", k)
+                k = 0
+            if test > 20:
+                break
+        print(counter)
+        y = ' '
     elif name == 'F':
         while x < x2:
             function = 2 ** (10 * a * a - 29 * a * x + 18 * x * x)
             print("F = ", function)
-            y.append(function)
-            if i > 0:
-                if y[i] > y[i - 1]:
-                    y_max = y[i]
-                else:
-                    y_max = y[i - 1]
+            y = y + str(function)
             delta_function = 2 ** (10 * a * a - 29 * a * (x + step) + 18 * (x + step) * (x + step))
             if fabs(delta_function - function) > delta:
                 while fabs(delta_function - function) > delta:
@@ -54,32 +62,19 @@ while change == 1:
             if x >= x2 or i > 100:
                 break
         print(y)
-        if i == 1:
-            print("У(max) = ", y[0])
-        else:
-            print("У(max) = ", y_max)
-        print("X(max) = ", x)
+        y = ' '
     elif name == 'Y':
         while x < x2:
             if 15 * a * a - 29 * a * x + 12 * x * x > -1 and 15 * a * a - 29 * a * x + 12 * x * x < 1:
                 function = atanh(15 * a * a - 29 * a * x + 12 * x * x)
                 print("Y = ", function)
-                y.append(function)
-            if i > 0:
-                if y[i] > y[i - 1]:
-                    y_max = y[i]
-                else:
-                    y_max = y[i - 1]
+                y = y + str(function)
             x += step
             i += 1
             if x >= x2 or i > 100:
                 break
             print(y)
-            if i == 1:
-                print("У(max) = ", y[0])
-            else:
-                print("У(max) = ", y_max)
-            print("X(max) = ", x)
+            y = ' '
     else:
         print("Неправильно выбрана функция, или ничего не выбрано")
     change = int(input("Хотите посчитать другую функцию? Введите 1, если да, в противном случае - любой другой символ"))
