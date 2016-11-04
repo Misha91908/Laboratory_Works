@@ -4,19 +4,19 @@
 
 int main()
 {
-    FILE *f;
+    FILE *f, *f1;
 
     struct
     {
         double G[100];
         double F[100];
         double Y[100];
-    }data;
+    } data;
 
-    char enter[100];
+    char enter[1000];
     float a, x, x2, step;
     float memory[1];
-    int i = 0, k = 0;
+    int i = 0;
 
     printf("Введите первую границу для рассчета функции: ");
     scanf("%s", enter);
@@ -57,7 +57,6 @@ int main()
     while (x < x2)
     {
         data.F[i] = pow(2,10 * a * a - 29 * a * x + 18 * x * x);
-        printf("F = %f\n", data.F[i]);
         i++;
         if (i > 100)
             break;
@@ -76,7 +75,6 @@ int main()
         if ((15 * a * a - 29 * a * x + 12 * x * x) > -1 && (15 * a * a - 29 * a * x + 12 * x * x) < 1) {
             data.Y[i] = 0.5 * log((15 * a * a - 29 * a * x + 12 * x * x + 1) /
                                   (1 - 15 * a * a + 29 * a * x - 12 * x * x));
-            printf("Y = %f\n", data.Y[i]);
         }
         i++;
         if (i > 100)
@@ -86,13 +84,20 @@ int main()
             break;
     }
 
-    f = fopen("output.txt","w");
-    fprintf(f, "=====================================================================================================");
+    f = fopen("/home/misha91908/output.txt","w");
+    fprintf(f, "=====================================================================================================\n");
     for (i = 0; i < 100; i++)
     {
-        fprintf(f,"| %lf | %lf | %lf |",data.G, data.F, data.Y);
-        fprintf(f, "________________________________________________________________________________________________");
+        fprintf(f,"|%lf|%lf|%lf|\n",data.G[i], data.F[i], data.Y[i]);
+        fprintf(f, "________________________________________________________________________________________________\n");
     }
     fclose(f);
+    f1 = fopen("/home/misha91908/output.txt","rt");
+    while (!feof(f1))
+    {
+        fscanf(f1, "%s", &enter);
+        printf("%s\n", enter);
+    }
+    fclose(f1);
     return 0;
 }
