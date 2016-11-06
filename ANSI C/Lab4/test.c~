@@ -47,7 +47,9 @@ int main()
                 i++;
                 if (i>100) /* проверка на перезаполнение массива*/
                 {
-                    break;
+                    printf("Ошибка. Превышено количество итераций,пожалуйста,введите значения заново");
+                    i = 0;
+                    goto enter;
                 }
                 delta_function = (5 * (-2 * a * a + a * (x + step) + 3 * (x + step) * (x + step))) /
                                  (10 * a * a + 11 * a * (x + step) + 3 * (x + step) * (x + step));
@@ -103,7 +105,9 @@ int main()
                 i++;
                 if (i>100)
                 {
-                    break;
+                    printf("Ошибка. Превышено количество итераций,пожалуйста,введите значения заново\n");
+                    i = 0;
+                    goto enter;
                 }
                 delta_function = pow(2, 10 * a * a - 29 * a * (x + step) + 18 * (x + step) * (x + step));
                 if (delta_function - function > delta)
@@ -158,7 +162,9 @@ int main()
                 i++;
                 if (i>100)
                 {
-                    break;
+                    printf("Ошибка. Превышено количество итераций,пожалуйста,введите значения заново");
+                    i = 0;
+                    goto enter;
                 }
                 x = x + step;
             }
