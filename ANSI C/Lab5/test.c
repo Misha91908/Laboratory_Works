@@ -5,35 +5,41 @@
 
 int main()
 {
-
     char name;
     char entry[100], output[1000], pattern[100];
-    int change, n = 0, i = 0,k = 0;
-    float a, x, x2, step;
+    long int change = 0, n = 0, i = 0, k = 0;
+    double a, x, x2, step;
     double function;
     enter:
     printf("Введите первую границу для рассчета функции: ");
     scanf("%s", entry);
     x = atof(entry);   /*преобразование строки в вещественное число*/
     getchar();
+    memset(entry, 0, 100);
     printf("Введите вторую границу для рассчета функции: ");
     scanf("%s", entry);
     x2 = atof(entry);
     getchar();
+    memset(entry, 0, 100);
     printf("Введите параметр а: ");
     scanf("%s", entry);
     a = atof(entry);
     getchar();
+    memset(entry, 0, 100);
     printf("Введите шаг: ");
     scanf("%s", entry);
     step = atof(entry);
     getchar();
+    memset(entry, 0, 100);
     printf("Ведиите шаблон: ");
     scanf("%s", pattern);
     getchar();
+    memset(entry, 0, 100);
     printf("Выберите функцию: ");
     scanf("%c", &name);
     getchar();
+    memset(entry, 0, 100);
+    memset(output, 0, 1000);
 
     switch (name)
     {
@@ -67,7 +73,7 @@ int main()
                 if (strstr(output,pattern) == 0)
                     break;
             }
-            printf("Найдено совпадений: %d\n",i);
+            printf("Найдено совпадений: %ld\n",i);
             i = 0;
             n = strlen(output);
             while (n != 0) /*очистка строки*/
@@ -79,7 +85,7 @@ int main()
                 n--;
             }
             printf("Хотите посчитать другую функцию? Введите 1,если хотите, в противном случае введите любой символ.\n");
-            scanf("%d",&change);
+            scanf("%ld",&change);
             getchar();
             if (change == 1)
                 goto enter;
@@ -113,7 +119,7 @@ int main()
                 if (strstr(output,pattern) == 0)
                     break;
             }
-            printf("Найдено совпадений: %d\n",i);
+            printf("Найдено совпадений: %ld\n",i);
             i = 0;
             n = strlen(output);
             while (n != 0)
@@ -125,7 +131,7 @@ int main()
                 n--;
             }
             printf("Хотите посчитать другую функцию? Введите 1,если хотите, в противном случае введите дургой символ.");
-            scanf("%d",&change);
+            scanf("%ld",&change);
             getchar();
             if (change == 1)
                 goto enter;
@@ -159,7 +165,7 @@ int main()
                 if (strstr(output,pattern) == 0)
                     break;
             }
-            printf("Найдено совпадений: %d\n",i);
+            printf("Найдено совпадений: %ld\n",i);
             i = 0;
             n = strlen(output);
             while (n != 0)
@@ -171,7 +177,7 @@ int main()
                 n--;
             }
             printf("Хотите посчитать другую функцию? Введите 1,если хотите, в противном случае введите любой символ.");
-            scanf("%d",&change);
+            scanf("%ld",&change);
             getchar();
             if (change == 1)
                 goto enter;

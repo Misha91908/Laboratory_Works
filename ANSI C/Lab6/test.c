@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main()
 {
@@ -13,26 +14,30 @@ int main()
     }data;
 
     char enter[100];
-    float a, x, x2, step;
-    float memory[1];
+    double a, x, x2, step;
+    double memory[1];
     int i = 0;
 
     printf("Введите первую границу для рассчета функции: ");
     scanf("%s", enter);
     x = atof(enter);
     getchar();
+    memset(enter, 0, 100);
     printf("Введите вторую границу для рассчета функции: ");
     scanf("%s", enter);
     x2 = atof(enter);
     getchar();
+    memset(enter, 0, 100);
     printf("Введите параметр а: ");
     scanf("%s", enter);
     a = atof(enter);
     getchar();
+    memset(enter, 0, 100);
     printf("Введите шаг: ");
     scanf("%s", enter);
     step = atof(enter);
     getchar();
+    memset(enter, 0, 100);
 
     memory[0] = x;   /*Границы для подсчета функции записываются в отдельный массив их 2 ячеек, потому как после
  * подсчета функции, значения этих переменных поменяются. После цикла им присваиваются сохраненные значения,

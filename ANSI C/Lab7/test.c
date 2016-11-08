@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main()
 {
@@ -14,26 +15,30 @@ int main()
     } data;
 
     char enter[1000];
-    float a, x, x2, step;
-    float memory[1];
+    double a, x, x2, step;
+    double memory[1];
     int i = 0;
 
     printf("Введите первую границу для рассчета функции: ");
     scanf("%s", enter);
     x = atof(enter);
     getchar();
+    memset(enter, 0, 100);
     printf("Введите вторую границу для рассчета функции: ");
     scanf("%s", enter);
     x2 = atof(enter);
     getchar();
+    memset(enter, 0, 100);
     printf("Введите параметр а: ");
     scanf("%s", enter);
     a = atof(enter);
     getchar();
+    memset(enter, 0, 100);
     printf("Введите шаг: ");
     scanf("%s", enter);
     step = atof(enter);
     getchar();
+    memset(enter, 0, 100);
 
     memory[0] = x;
     memory[1] = x2;
@@ -84,7 +89,7 @@ int main()
             break;
     }
 
-    f = fopen("/home/misha91908/output.txt","w");  /*в фаил записываются значения переменных структуры*/
+    f = fopen("/home/user/output.txt","w");  /*в фаил записываются значения переменных структуры*/
     fprintf(f, "=====================================================================================================\n");
     for (i = 0; i < 100; i++)
     {
@@ -92,10 +97,10 @@ int main()
         fprintf(f, "________________________________________________________________________________________________\n");
     }
     fclose(f);
-    f1 = fopen("/home/misha91908/output.txt","rt"); /*с файла считываются все данные*/
+    f1 = fopen("/home/user/output.txt","r"); /*с файла считываются все данные*/
     while (!feof(f1))
     {
-        fscanf(f1, "%s", &enter);
+        fscanf(f1, "%s", enter);
         printf("%s\n", enter);
     }
     fclose(f1);
