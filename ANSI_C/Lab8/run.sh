@@ -1,0 +1,8 @@
+#!/bin/bash
+for i in {1..10}
+do
+gcc test.c -lm -fopenmp
+./a.out
+sleep 1s
+done
+python3 pointreplacer.py

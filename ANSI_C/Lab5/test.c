@@ -6,7 +6,7 @@
 int main()
 {
     char name;
-    char entry[100], output[1000], pattern[100];
+    char entry[1000], output[10000], pattern[100];
     long int change = 0, n = 0, i = 0, k = 0;
     double a, x, x2, step;
     double function;

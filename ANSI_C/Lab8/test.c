@@ -2,6 +2,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+#include <omp.h>
 
 struct Point
 {
@@ -73,12 +74,19 @@ int points_quantity(double rad)
 
 int main()
 {
-    double radius;
+    FILE* output;
+    double radius,start,end;
+    srand(time(NULL));
 
-    printf("Введите радиус окрестности: ");
-    scanf("%lf", &radius);
-
-    printf("Количество точек в заданной окрестности: %d", points_quantity(radius)); /*вызов фнукции,
+    start = omp_get_wtime();
+    radius = (double) rand() / RAND_MAX * (5.0 + 0.0) - 0.0;
+    printf("радиус окрестности: %lf\n", radius);
+    printf("Количество точек в заданной окрестности: %d\n", points_quantity(radius)); /*вызов фнукции,
  * и вывод результата на экран*/
+    end = omp_get_wtime();
+    printf("Время выполнения программы: %lf\n\n", end - start);
+    output = fopen("/home/user/Laboratory_works/ANSI_C/Lab8/out.txt","a");
+    fprintf(output,"%lf\n",end - start);
+    fclose(output);
     return 0;
 }
