@@ -25,15 +25,17 @@ int main(void)
 
     for (int i = 1; i < N; i++)
     {
-        sat->alt = i+2;
-        sat->lat = i+3;
-        sat->lon = i+4;
-        printf("%lf %lf %lf\n", sat->alt, sat->lat, sat->lon);
+        sat[i].alt = i+2;
+        sat[i].lat = i+3;
+        sat[i].lon = i+4;
+    }
+
+    for (int i = 1; i < N; i++)
+    {
+        printf("%lf %lf %lf\n",sat[i].alt,sat[i].lat,sat[i].lon);
     }
 
     free(sat);
-
-    sat = NULL;
 
     return 0;
 }
