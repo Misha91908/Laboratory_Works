@@ -3,5 +3,5 @@ project(Lab10)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")
 
-set(SOURCE_FILES test2.c)
+set(SOURCE_FILES stack.c)
 add_executable(Lab10 ${SOURCE_FILES})
