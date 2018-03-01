@@ -1,25 +1,46 @@
 #include <iostream>
+#include <string>
+#include <cstring>
+#include <sstream>
 
 using namespace std;
 
-int main()
+int main(int argc, char* argv[])
 {
-    double number = 0.0, result = 0.0;
-    int iterator = 0;
+    int length = 0;
+    string count, token;
+    double out = 0.0;
 
-    cout << "Введите число:\n";
-    cin >> number;
-
-    result = number;
-    while (result*result != number)
+    for(int i = 0; i < argc; i++ )
     {
-        result = 0.5 *(result + (number / result));
-        iterator++;
-        if(iterator > 150)
-            break;
+        if(strstr(argv[i], "-poly="))
+        {
+            count = argv[i];
+        }
     }
 
-    cout << "Квадратный корень из числа " << number << " = " << result << endl;
+    unsigned long equals_index_pos = count.find('=');
+    count = count.erase(0, equals_index_pos+1);
 
+    stringstream ss(count);
+    while(getline(ss, token, ','))
+    {
+        length++;
+    }
+
+    int* data =  new int[length];
+    stringstream ss1(count);
+
+    for(int i = 0; i < length; i++)
+    {
+        getline(ss1, token, ',');
+        data[i] = stoi(token);
+    }
+
+    for (int i = 0; i < length; i++)
+    {
+        out += 1.0/(data[i]*3.0);
+    }
+    cout << out << endl;
     return 0;
 }

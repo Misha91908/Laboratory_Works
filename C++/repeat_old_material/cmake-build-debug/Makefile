@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.3727.114/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.3741.16/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.3727.114/bin/cmake/bin/cmake -E remove -f
+RM = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.3741.16/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/CLionProjects/untitled4
+CMAKE_SOURCE_DIR = /home/user/Laboratory_Works/C++/repeat_old_material
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/CLionProjects/untitled4/cmake-build-debug
+CMAKE_BINARY_DIR = /home/user/Laboratory_Works/C++/repeat_old_material/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/user/CLionProjects/untitled4/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.3727.114/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.3741.16/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.3727.114/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.3741.16/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/CLionProjects/untitled4/cmake-build-debug/CMakeFiles /home/user/CLionProjects/untitled4/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Laboratory_Works/C++/repeat_old_material/cmake-build-debug/CMakeFiles /home/user/Laboratory_Works/C++/repeat_old_material/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/CLionProjects/untitled4/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/Laboratory_Works/C++/repeat_old_material/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,32 @@ untitled4/fast:
 	$(MAKE) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/build
 .PHONY : untitled4/fast
 
-ex1.o: ex1.cpp.o
+ex5.o: ex5.cpp.o
 
-.PHONY : ex1.o
+.PHONY : ex5.o
 
 # target to build an object file
-ex1.cpp.o:
-	$(MAKE) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/ex1.cpp.o
-.PHONY : ex1.cpp.o
+ex5.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/ex5.cpp.o
+.PHONY : ex5.cpp.o
 
-ex1.i: ex1.cpp.i
+ex5.i: ex5.cpp.i
 
-.PHONY : ex1.i
+.PHONY : ex5.i
 
 # target to preprocess a source file
-ex1.cpp.i:
-	$(MAKE) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/ex1.cpp.i
-.PHONY : ex1.cpp.i
+ex5.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/ex5.cpp.i
+.PHONY : ex5.cpp.i
 
-ex1.s: ex1.cpp.s
+ex5.s: ex5.cpp.s
 
-.PHONY : ex1.s
+.PHONY : ex5.s
 
 # target to generate assembly for a file
-ex1.cpp.s:
-	$(MAKE) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/ex1.cpp.s
-.PHONY : ex1.cpp.s
+ex5.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/ex5.cpp.s
+.PHONY : ex5.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... untitled4"
-	@echo "... ex1.o"
-	@echo "... ex1.i"
-	@echo "... ex1.s"
+	@echo "... ex5.o"
+	@echo "... ex5.i"
+	@echo "... ex5.s"
 .PHONY : help
 
 

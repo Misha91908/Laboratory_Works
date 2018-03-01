@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.3727.114/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.3741.16/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/173.3727.114/bin/cmake/bin/cmake -E remove -f
+RM = /home/user/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/181.3741.16/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/user/CLionProjects/untitled4
+CMAKE_SOURCE_DIR = /home/user/Laboratory_Works/C++/repeat_old_material
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/user/CLionProjects/untitled4/cmake-build-debug
+CMAKE_BINARY_DIR = /home/user/Laboratory_Works/C++/repeat_old_material/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/untitled4.dir/depend.make
@@ -57,41 +57,41 @@ include CMakeFiles/untitled4.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/untitled4.dir/flags.make
 
-CMakeFiles/untitled4.dir/ex1.cpp.o: CMakeFiles/untitled4.dir/flags.make
-CMakeFiles/untitled4.dir/ex1.cpp.o: ../ex1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/CLionProjects/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled4.dir/ex1.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/ex1.cpp.o -c /home/user/CLionProjects/untitled4/ex1.cpp
+CMakeFiles/untitled4.dir/ex5.cpp.o: CMakeFiles/untitled4.dir/flags.make
+CMakeFiles/untitled4.dir/ex5.cpp.o: ../ex5.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/user/Laboratory_Works/C++/repeat_old_material/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/untitled4.dir/ex5.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/untitled4.dir/ex5.cpp.o -c /home/user/Laboratory_Works/C++/repeat_old_material/ex5.cpp
 
-CMakeFiles/untitled4.dir/ex1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled4.dir/ex1.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/CLionProjects/untitled4/ex1.cpp > CMakeFiles/untitled4.dir/ex1.cpp.i
+CMakeFiles/untitled4.dir/ex5.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/untitled4.dir/ex5.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/user/Laboratory_Works/C++/repeat_old_material/ex5.cpp > CMakeFiles/untitled4.dir/ex5.cpp.i
 
-CMakeFiles/untitled4.dir/ex1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled4.dir/ex1.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/CLionProjects/untitled4/ex1.cpp -o CMakeFiles/untitled4.dir/ex1.cpp.s
+CMakeFiles/untitled4.dir/ex5.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/untitled4.dir/ex5.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/user/Laboratory_Works/C++/repeat_old_material/ex5.cpp -o CMakeFiles/untitled4.dir/ex5.cpp.s
 
-CMakeFiles/untitled4.dir/ex1.cpp.o.requires:
+CMakeFiles/untitled4.dir/ex5.cpp.o.requires:
 
-.PHONY : CMakeFiles/untitled4.dir/ex1.cpp.o.requires
+.PHONY : CMakeFiles/untitled4.dir/ex5.cpp.o.requires
 
-CMakeFiles/untitled4.dir/ex1.cpp.o.provides: CMakeFiles/untitled4.dir/ex1.cpp.o.requires
-	$(MAKE) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/ex1.cpp.o.provides.build
-.PHONY : CMakeFiles/untitled4.dir/ex1.cpp.o.provides
+CMakeFiles/untitled4.dir/ex5.cpp.o.provides: CMakeFiles/untitled4.dir/ex5.cpp.o.requires
+	$(MAKE) -f CMakeFiles/untitled4.dir/build.make CMakeFiles/untitled4.dir/ex5.cpp.o.provides.build
+.PHONY : CMakeFiles/untitled4.dir/ex5.cpp.o.provides
 
-CMakeFiles/untitled4.dir/ex1.cpp.o.provides.build: CMakeFiles/untitled4.dir/ex1.cpp.o
+CMakeFiles/untitled4.dir/ex5.cpp.o.provides.build: CMakeFiles/untitled4.dir/ex5.cpp.o
 
 
 # Object files for target untitled4
 untitled4_OBJECTS = \
-"CMakeFiles/untitled4.dir/ex1.cpp.o"
+"CMakeFiles/untitled4.dir/ex5.cpp.o"
 
 # External object files for target untitled4
 untitled4_EXTERNAL_OBJECTS =
 
-untitled4: CMakeFiles/untitled4.dir/ex1.cpp.o
+untitled4: CMakeFiles/untitled4.dir/ex5.cpp.o
 untitled4: CMakeFiles/untitled4.dir/build.make
 untitled4: CMakeFiles/untitled4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/CLionProjects/untitled4/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable untitled4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/user/Laboratory_Works/C++/repeat_old_material/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable untitled4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/untitled4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -99,7 +99,7 @@ CMakeFiles/untitled4.dir/build: untitled4
 
 .PHONY : CMakeFiles/untitled4.dir/build
 
-CMakeFiles/untitled4.dir/requires: CMakeFiles/untitled4.dir/ex1.cpp.o.requires
+CMakeFiles/untitled4.dir/requires: CMakeFiles/untitled4.dir/ex5.cpp.o.requires
 
 .PHONY : CMakeFiles/untitled4.dir/requires
 
@@ -108,6 +108,6 @@ CMakeFiles/untitled4.dir/clean:
 .PHONY : CMakeFiles/untitled4.dir/clean
 
 CMakeFiles/untitled4.dir/depend:
-	cd /home/user/CLionProjects/untitled4/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/CLionProjects/untitled4 /home/user/CLionProjects/untitled4 /home/user/CLionProjects/untitled4/cmake-build-debug /home/user/CLionProjects/untitled4/cmake-build-debug /home/user/CLionProjects/untitled4/cmake-build-debug/CMakeFiles/untitled4.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/user/Laboratory_Works/C++/repeat_old_material/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/Laboratory_Works/C++/repeat_old_material /home/user/Laboratory_Works/C++/repeat_old_material /home/user/Laboratory_Works/C++/repeat_old_material/cmake-build-debug /home/user/Laboratory_Works/C++/repeat_old_material/cmake-build-debug /home/user/Laboratory_Works/C++/repeat_old_material/cmake-build-debug/CMakeFiles/untitled4.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/untitled4.dir/depend
 

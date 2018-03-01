@@ -6,7 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/user/CLionProjects/untitled4/ex1.cpp
-iostream
+/home/user/Laboratory_Works/C++/repeat_old_material/ex4.cpp
+qt5/QtWidgets/QApplication
+-
+qt5/QtWidgets/QPushButton
 -
 
