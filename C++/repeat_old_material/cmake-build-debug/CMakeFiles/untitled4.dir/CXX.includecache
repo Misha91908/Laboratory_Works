@@ -7,8 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/user/Laboratory_Works/C++/repeat_old_material/ex4.cpp
-qt5/QtWidgets/QApplication
+stdlib.h
 -
-qt5/QtWidgets/QPushButton
+math.h
 -
 
